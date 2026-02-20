@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <dialog>
+      <form>
+        <h3>Add A New Book</h3>
+        <div>
+          <label for="book-title">Title</label> <br>
+          <input placeholder="Enter Book Title" id="book-title" type="text" />
+        </div>
+
+        <div>
+          <label for="book-author">Author</label><br>
+          <input placeholder="Enter Book Author" id="book-author" type="text" />
+        </div>
+
+        <div>
+          <label for="book-pages">Pages</label><br>
+          <input
+            placeholder="Enter NO Of pages"
+            id="book-pages"
+            type="number"
+          />
+        </div>
+
+        <div>
+          <label for="read-status">Read Status: </label>
+          <input id="read-status" type="checkbox" />
+        </div>
+        <div>
+          <button class="dialog-close">Close</button>
+          <button class="submit-button" type="submit">Submit</button>
+        </div>
+      </form>
+    </dialog>
+    <header>
+      <h2>MY LIBRARY</h2>
+      <button class="new-book-button">Add new book</button>
+    </header>
+    <main class="books-area">
+
+    </main>
+
+    <footer>@alamstack On github</footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
