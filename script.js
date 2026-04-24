@@ -1,18 +1,18 @@
 const myLibrary = [];
-function Book(title, author, pages, read, id) {
+class Book {
   // the constructor...
-  if (!new.target) {
-    throw Error("You must use the 'new' operator to call the constructor");
+  constructor(title, author, pages, read, id) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+    this.id = id;
   }
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-  this.id = id;
+
+  toggleRead() {
+    this.read = !this.read;
+  }
 }
-Book.prototype.toggleRead = function () {
-  this.read = !this.read;
-};
 
 function addBookToLibrary(title, author, pages, read, id) {
   let book = new Book(title, author, pages, read, id);
@@ -70,7 +70,7 @@ let getMain = document.querySelector("main");
 function arrayLooper() {
   getMain.innerHTML = "";
   myLibrary.forEach((x) => {
-    const readText = x.read ? 'Read' : 'Not Read';
+    const readText = x.read ? "Read" : "Not Read";
     let createDiv = document.createElement("div");
     createDiv.classList.add("book-container");
     getMain.appendChild(createDiv);
@@ -86,7 +86,7 @@ function arrayLooper() {
 
   let getForm = document.querySelector("form");
   getForm.reset();
-readStatus();
+  readStatus();
   deleteDom();
 }
 arrayLooper();
@@ -151,7 +151,7 @@ function readStatus() {
 
       let book = myLibrary.find(({ id }) => id === getId);
 
-      book.toggleRead(); 
+      book.toggleRead();
 
       arrayLooper();
     });
